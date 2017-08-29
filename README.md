@@ -2,6 +2,9 @@
 
 Members: Meya Gorbea, Cristian Galvan, Jessie Dowding
 
+###### Short Description
+Task organizer; integrated with calendar, organize tasks by priority
+
 ###### Feature List
 
 | Feature        | Who         | 
