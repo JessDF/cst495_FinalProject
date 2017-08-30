@@ -18,3 +18,6 @@ Task organizer; integrated with calendar, organize tasks by priority
 |  Prioritize Tasks    |       |
 |  Notifications/ Reminder    |       |
 |  Creation of Calendar/ Link to Google?    |       |
+|  Unit testing   |       |
+|  Internationalization    |       |
+|  Localization    |       |
