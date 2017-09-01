@@ -22,3 +22,4 @@ Task organizer; integrated with calendar, organize tasks by priority
 |  Internationalization    |       |
 |  Localization    |       |
 |  Categorize Tasks    |       |
+|  Force Touch to add Tasks?    |       |
