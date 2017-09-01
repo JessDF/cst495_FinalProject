@@ -21,4 +21,4 @@ Task organizer; integrated with calendar, organize tasks by priority
 |  Unit testing   |       |
 |  Internationalization    |       |
 |  Localization    |       |
-|  Finished Tasks List    |       |
+
