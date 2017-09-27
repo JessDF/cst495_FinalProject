@@ -11,9 +11,9 @@ Task organizer; integrated with calendar, organize tasks by priority
 | ------------- |:-------------:|
 |  Date/ Time String detection    |       |
 |  Add to calendar via String Detection    |       |
-|  Add Tasks    |       |
+|  Add Tasks    |  Jessie     |
 |  Delete Tasks    |       |
-|  "Finish Tasks" (i.e. Cross off)    |       |
+|  "Finish Tasks" (i.e. Cross off)    |   Jessie (fix, right now checkmark)    |
 |  Edit Tasks    |       |
 |  Prioritize Tasks    |       |
 |  Notifications/ Reminder    |       |
