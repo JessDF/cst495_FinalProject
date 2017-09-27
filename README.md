@@ -12,7 +12,7 @@ Task organizer; integrated with calendar, organize tasks by priority
 |  Date/ Time String detection    |       |
 |  Add to calendar via String Detection    |       |
 |  Add Tasks    |  Jessie     |
-|  Delete Tasks    |       |
+|  Delete Tasks    |  Jessie     |
 |  "Finish Tasks" (i.e. Cross off)    |   Jessie (fix, right now checkmark)    |
 |  Edit Tasks    |       |
 |  Prioritize Tasks    |       |
@@ -23,3 +23,4 @@ Task organizer; integrated with calendar, organize tasks by priority
 |  Localization    |       |
 |  Categorize Tasks    |       |
 |  Force Touch to add Tasks?    |       |
+|  “Save Tasks” (Serialization)    |   Jessie (Still todo)    |

@@ -22,7 +22,7 @@ class ViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    private var todoItems = ToDoItem.getMockData()
+    private var todoItems = [ToDoItem]()
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -79,6 +79,13 @@ class ViewController: UITableViewController {
         let newIndex = todoItems.count
         todoItems.append(ToDoItem(title: title))
         tableView.insertRows(at: [IndexPath(row: newIndex, section: 0)], with: .top)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if indexPath.row < todoItems.count {
+            todoItems.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .top)
+        }
     }
 
 }
