@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4047C9621F7BFCC700FBA164 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4047C9611F7BFCC700FBA164 /* ToDoItem.swift */; };
 		409D0ACA1F7BF41C008C2053 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409D0AC91F7BF41C008C2053 /* AppDelegate.swift */; };
 		409D0ACC1F7BF41C008C2053 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409D0ACB1F7BF41C008C2053 /* ViewController.swift */; };
 		409D0ACF1F7BF41C008C2053 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 409D0ACD1F7BF41C008C2053 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4047C9611F7BFCC700FBA164 /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		409D0AC61F7BF41C008C2053 /* TaskManagment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskManagment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		409D0AC91F7BF41C008C2053 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		409D0ACB1F7BF41C008C2053 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				409D0AD01F7BF41C008C2053 /* Assets.xcassets */,
 				409D0AD21F7BF41C008C2053 /* LaunchScreen.storyboard */,
 				409D0AD51F7BF41C008C2053 /* Info.plist */,
+				4047C9611F7BFCC700FBA164 /* ToDoItem.swift */,
 			);
 			path = TaskManagment;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				409D0ACC1F7BF41C008C2053 /* ViewController.swift in Sources */,
 				409D0ACA1F7BF41C008C2053 /* AppDelegate.swift in Sources */,
+				4047C9621F7BFCC700FBA164 /* ToDoItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +511,7 @@
 				409D0AF01F7BF41D008C2053 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		409D0AF11F7BF41D008C2053 /* Build configuration list for PBXNativeTarget "TaskManagmentTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +520,7 @@
 				409D0AF31F7BF41D008C2053 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		409D0AF41F7BF41D008C2053 /* Build configuration list for PBXNativeTarget "TaskManagmentUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +529,7 @@
 				409D0AF61F7BF41D008C2053 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
