@@ -23,4 +23,4 @@ Task organizer; integrated with calendar, organize tasks by priority
 |  Localization    |       |
 |  Categorize Tasks    |       |
 |  Force Touch to add Tasks?    |       |
-|  “Save Tasks” (Serialization)    |   Jessie (Still todo)    |
+|  “Save Tasks” (Serialization)    |   Jessie (fix, right now if close completely doesn't save)    |
