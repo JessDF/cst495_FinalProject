@@ -24,3 +24,9 @@ Task organizer; integrated with calendar, organize tasks by priority
 |  Categorize Tasks    |       |
 |  Force Touch to add Tasks?    |       |
 |  “Save Tasks” (Serialization)    |   Jessie (fix, right now if close completely doesn't save)    |
+
+
+
+###### Developer Note
+
+    - May want to install Realm Browser by Realm from the itunes/apple store. This will let us read and edit Realm databases (Using this for persistent data).
