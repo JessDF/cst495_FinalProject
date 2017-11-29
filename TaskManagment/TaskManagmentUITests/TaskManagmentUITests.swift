@@ -2,8 +2,8 @@
 //  TaskManagmentUITests.swift
 //  TaskManagmentUITests
 //
-//  Created by Jessie Dowding on 9/27/17.
-//  Copyright © 2017 cst495_TaskManagement. All rights reserved.
+//  Created by Jessie Dowding on 11/29/17.
+//  Copyright © 2017 Cristian Meya Jessie. All rights reserved.
 //
 
 import XCTest
