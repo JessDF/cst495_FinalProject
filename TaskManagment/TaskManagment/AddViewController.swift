@@ -8,10 +8,11 @@
 
 import UIKit
 
-class AddViewController: UIViewController {
+class AddViewController: UIViewController, UITextViewDelegate{
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var notesTextView: UITextView!
     private var todoItems = ToDoItem.getMockData()
+    var delegate: todoDelegate?
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -30,15 +31,14 @@ class AddViewController: UIViewController {
     @IBAction func addButton(_ sender: Any) {
         print("Button tapped")
         
-        // The index of the new item will be the current item count
-        
-        // Create new item and add it to the todo items list
         todoItems.append(ToDoItem(title: titleTextField.text!, note: notesTextView.text!))
         
+        delegate?.addToList(title: titleTextField.text!, note: notesTextView.text!)
         
-        // Tell the table view a new row has been created
-        self.navigationController?.popToRootViewController(animated: true)
+        //self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
+    
 
 }
 

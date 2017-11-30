@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController, todoDelegate {
     
     //var toDoItems:NSMutableArray = NSMutableArray()
     //private var toDoItems = ToDoItem.getMockData()
@@ -22,14 +22,49 @@ class TableViewController: UITableViewController {
         super.init(style: style)
     }
     override func viewDidAppear(_ animated: Bool) {
-        //let newIndex = toDoItems.count
-        //tableView.insertRows(at: [IndexPath(row: newIndex, section: 0)], with: .top)
         
         self.tableView.reloadData()
         
     }
+    
+    func addToList(title: String, note: String) {
+        toDoItems.append(ToDoItem(title: title, note: note))
+        tableView.reloadData()
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(UIApplicationDelegate.applicationDidEnterBackground(_:)),
+            name: NSNotification.Name.UIApplicationDidEnterBackground,
+            object: nil)
+        
+        do
+        {
+            // Try to load from persistence
+            self.toDoItems = try [ToDoItem].readFromPersistence()
+        }
+        catch let error as NSError
+        {
+            if error.domain == NSCocoaErrorDomain && error.code == NSFileReadNoSuchFileError
+            {
+                NSLog("No persistence file found, not necesserially an error...")
+            }
+            else
+            {
+                let alert = UIAlertController(
+                    title: "Error",
+                    message: "Could not load the to-do items!",
+                    preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
+                
+                NSLog("Error loading from persistence: \(error)")
+            }
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -79,6 +114,18 @@ class TableViewController: UITableViewController {
         {
             toDoItems.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .top)
+        }
+    }
+    @objc
+    public func applicationDidEnterBackground(_ notification: NSNotification)
+    {
+        do
+        {
+            try toDoItems.writeToPersistence()
+        }
+        catch let error
+        {
+            NSLog("Error writing to persistence: \(error)")
         }
     }
 }

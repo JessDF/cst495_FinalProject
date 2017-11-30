@@ -78,7 +78,7 @@ extension Collection where Iterator.Element == ToDoItem
         }
         else
         {
-            throw NSError(domain: "com.example.MyToDo", code: 10, userInfo: nil)
+            throw NSError(domain: "edu.csumb.TaskManagment", code: 10, userInfo: nil)
         }
     }
     
@@ -93,12 +93,12 @@ extension Collection where Iterator.Element == ToDoItem
             }
             else
             {
-                throw NSError(domain: "com.example.MyToDo", code: 11, userInfo: nil)
+                throw NSError(domain: "edu.csumb.TaskManagment", code: 11, userInfo: nil)
             }
         }
         else
         {
-            throw NSError(domain: "com.example.MyToDo", code: 12, userInfo: nil)
+            throw NSError(domain: "edu.csumb.TaskManagment", code: 12, userInfo: nil)
         }
     }
 }

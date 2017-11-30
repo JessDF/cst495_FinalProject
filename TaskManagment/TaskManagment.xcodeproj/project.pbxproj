@@ -18,6 +18,7 @@
 		EE2770A91FCF72E0000BACC7 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2770A81FCF72E0000BACC7 /* TableViewController.swift */; };
 		EE2770AB1FCF7489000BACC7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2770AA1FCF7489000BACC7 /* DetailViewController.swift */; };
 		EE2770AD1FCF80E4000BACC7 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2770AC1FCF80E4000BACC7 /* ToDoItem.swift */; };
+		EE2770AF1FCF9403000BACC7 /* todoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2770AE1FCF9403000BACC7 /* todoDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		EE2770A81FCF72E0000BACC7 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		EE2770AA1FCF7489000BACC7 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EE2770AC1FCF80E4000BACC7 /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
+		EE2770AE1FCF9403000BACC7 /* todoDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = todoDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				EE27707E1FCF6A6B000BACC7 /* TaskManagment.xcdatamodeld */,
 				EE2770A81FCF72E0000BACC7 /* TableViewController.swift */,
 				EE2770AC1FCF80E4000BACC7 /* ToDoItem.swift */,
+				EE2770AE1FCF9403000BACC7 /* todoDelegate.swift */,
 			);
 			path = TaskManagment;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				EE27707A1FCF6A6B000BACC7 /* AddViewController.swift in Sources */,
 				EE2770AD1FCF80E4000BACC7 /* ToDoItem.swift in Sources */,
 				EE2770AB1FCF7489000BACC7 /* DetailViewController.swift in Sources */,
+				EE2770AF1FCF9403000BACC7 /* todoDelegate.swift in Sources */,
 				EE2770781FCF6A6B000BACC7 /* AppDelegate.swift in Sources */,
 				EE2770A91FCF72E0000BACC7 /* TableViewController.swift in Sources */,
 			);
