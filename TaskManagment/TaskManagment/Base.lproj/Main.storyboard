@@ -12,7 +12,7 @@
         <!--Table View Controller-->
         <scene sceneID="4Ta-Sn-597">
             <objects>
-                <tableViewController id="zKM-aq-tFn" sceneMemberID="viewController">
+                <tableViewController id="zKM-aq-tFn" customClass="TableViewController" customModule="TaskManagment" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="QVp-8H-u0c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zAG-cC-Kph" id="MQg-YY-9gH">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="772" y="50.824587706146929"/>
         </scene>
-        <!--View Controller-->
+        <!--Add View Controller-->
         <scene sceneID="cef-QQ-tWa">
             <objects>
-                <viewController id="hQs-b4-38H" sceneMemberID="viewController">
+                <viewController id="hQs-b4-38H" customClass="AddViewController" customModule="TaskManagment" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F0u-yP-0zV"/>
                         <viewControllerLayoutGuide type="bottom" id="KzQ-tl-Izp"/>
@@ -91,17 +91,25 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="VKK-8q-ZfP">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="n4Z-Lg-xYE"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="n4Z-Lg-xYE">
+                            <connections>
+                                <action selector="addButton:" destination="hQs-b4-38H" id="lS2-h6-faD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="notesTextView" destination="fK1-eD-X5T" id="1dX-y6-eEP"/>
+                        <outlet property="titleTextField" destination="gRc-4c-lNN" id="M12-aZ-HQ1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6hW-l1-kgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1618.4000000000001" y="50.824587706146929"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="tPY-Da-i5t">
             <objects>
-                <viewController id="U6N-Qy-1M7" sceneMemberID="viewController">
+                <viewController id="U6N-Qy-1M7" customClass="DetailViewController" customModule="TaskManagment" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tip-b1-F2U"/>
                         <viewControllerLayoutGuide type="bottom" id="M96-De-ZLw"/>
