@@ -11,41 +11,8 @@ import CoreData
 
 class TableViewController: UITableViewController{
     
-    //var names: [String] = []
     var people: [NSManagedObject] = []
     var refresher: UIRefreshControl!
-    
-    @IBAction func playButton(_ sender: Any) {
-        //Make window pop up to fill screen
-        //Add an image
-        //Use gestures to get rid of it
-    }
-    @IBAction func addName(_ sender: Any) {
-        let alert = UIAlertController(title: "New Name",
-                                      message: "Add a new name",
-                                      preferredStyle: .alert)
-        
-        let saveAction = UIAlertAction(title: "Save", style: .default) {
-            [unowned self] action in
-            
-            guard let textField = alert.textFields?.first,
-                let nameToSave = textField.text else {
-                    return
-            }
-            
-            self.save(name: nameToSave)
-            self.tableView.reloadData()
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
-        
-        alert.addTextField()
-        
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-        
-        present(alert, animated: true)
-    }
     
     func save(name: String) {
         
@@ -100,7 +67,6 @@ class TableViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         title = "The List"
         tableView.register(UITableViewCell.self,
                            forCellReuseIdentifier: "Cell")
@@ -136,12 +102,10 @@ class TableViewController: UITableViewController{
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle:UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
-        //if editingStyle == .delete {
         let peoples = people[indexPath.row]
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -170,7 +134,6 @@ class TableViewController: UITableViewController{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        //cell.textLabel?.text = names[indexPath.row]
         cell.textLabel?.text = person.value(forKeyPath: "name") as? String
         
         return cell
@@ -178,14 +141,11 @@ class TableViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        //getting the index path of selected row
-        //let indexPath = tableView.indexPathForSelectedRow
         
         let alert = UIAlertController(title: "Edit Name",
                                       message: "edit the name",
                                       preferredStyle: .alert)
         
-        //Add action that will edit and save the edit
         
         let saveAction = UIAlertAction(title: "Save", style: .default) {
             [unowned self] action in
@@ -207,7 +167,6 @@ class TableViewController: UITableViewController{
         alert.addAction(cancelAction)
         
         present(alert, animated: true)
-        //tableView.reloadRows(at: [indexPath!], with: .automatic)
         self.tableView.reloadData()
     }
 }

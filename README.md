@@ -37,3 +37,12 @@ Task organizer; integrated with calendar, organize tasks by priority
 - https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/CreateATableView.html
 - https://medium.com/yay-its-erica/implementing-uirefreshcontrol-on-tableviews-in-swift3-1e3610ae6da6
 - https://www.youtube.com/watch?v=DmWv-JtQH4Q
+
+
+###### Next steps
+
+- Edit should be a button not when item tapped
+- When item held down/ or create a button, mark as done
+- Save description to core data
+- When item tapped, show title and description
+- Add to calendar
