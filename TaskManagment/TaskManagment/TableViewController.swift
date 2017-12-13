@@ -7,125 +7,208 @@
 //
 
 import UIKit
+import CoreData
 
-class TableViewController: UITableViewController, todoDelegate {
+class TableViewController: UITableViewController{
     
-    //var toDoItems:NSMutableArray = NSMutableArray()
-    //private var toDoItems = ToDoItem.getMockData()
-    private var toDoItems = [ToDoItem]()
+    //var names: [String] = []
+    var people: [NSManagedObject] = []
+    var refresher: UIRefreshControl!
     
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
+    @IBAction func playButton(_ sender: Any) {
+        //Make window pop up to fill screen
+        //Add an image
+        //Use gestures to get rid of it
     }
-    
-    override init(style: UITableViewStyle) {
-        super.init(style: style)
-    }
-    override func viewDidAppear(_ animated: Bool) {
+    @IBAction func addName(_ sender: Any) {
+        let alert = UIAlertController(title: "New Name",
+                                      message: "Add a new name",
+                                      preferredStyle: .alert)
         
-        self.tableView.reloadData()
+        let saveAction = UIAlertAction(title: "Save", style: .default) {
+            [unowned self] action in
+            
+            guard let textField = alert.textFields?.first,
+                let nameToSave = textField.text else {
+                    return
+            }
+            
+            self.save(name: nameToSave)
+            self.tableView.reloadData()
+        }
         
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
+        
+        alert.addTextField()
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true)
     }
     
-    func addToList(title: String, note: String) {
-        toDoItems.append(ToDoItem(title: title, note: note))
-        tableView.reloadData()
-    }
+    func save(name: String) {
         
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let entity = NSEntityDescription.entity(forEntityName: "Person",
+                                                in: managedContext)!
+        
+        let person = NSManagedObject(entity: entity, insertInto: managedContext)
+        
+        person.setValue(name, forKeyPath: "name")
+        
+        do {
+            try managedContext.save()
+            people.append(person)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    func edit(name: String, index: IndexPath) {
+        
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let peoples = people[index.row]
+        managedContext.delete(peoples)
+        people.remove(at: index.row)
+        tableView.deleteRows(at: [index], with: .top)
+        
+        let entity = NSEntityDescription.entity(forEntityName: "Person",
+                                                in: managedContext)!
+        
+        let person = NSManagedObject(entity: entity, insertInto: managedContext)
+        
+        person.setValue(name, forKeyPath: "name")
+        
+        do {
+            try managedContext.save()
+            people.append(person)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(UIApplicationDelegate.applicationDidEnterBackground(_:)),
-            name: NSNotification.Name.UIApplicationDidEnterBackground,
-            object: nil)
+        // Do any additional setup after loading the view, typically from a nib.
+        title = "The List"
+        tableView.register(UITableViewCell.self,
+                           forCellReuseIdentifier: "Cell")
+        refresher = UIRefreshControl()
+        tableView.addSubview(refresher)
+        refresher.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refresher.tintColor = UIColor(red: 1.00, green: 0.21, blue: 0.55, alpha: 1.0) //pink
+        refresher.addTarget(self, action: #selector(loadData), for: .valueChanged)
+    }
+    
+    func loadData() {
+        tableView.reloadData()
+        refresher.endRefreshing()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        do
-        {
-            // Try to load from persistence
-            self.toDoItems = try [ToDoItem].readFromPersistence()
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
         }
-        catch let error as NSError
-        {
-            if error.domain == NSCocoaErrorDomain && error.code == NSFileReadNoSuchFileError
-            {
-                NSLog("No persistence file found, not necesserially an error...")
-            }
-            else
-            {
-                let alert = UIAlertController(
-                    title: "Error",
-                    message: "Could not load the to-do items!",
-                    preferredStyle: .alert)
-                
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                
-                self.present(alert, animated: true, completion: nil)
-                
-                NSLog("Error loading from persistence: \(error)")
-            }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Person")
+        
+        do {
+            people = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    override func numberOfSections(in tableView: UITableView) -> Int
-    {
-        return 1
+        // Dispose of any resources that can be recreated.
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    override func tableView(_ tableView: UITableView, commit editingStyle:UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
-        return toDoItems.count
+        //if editingStyle == .delete {
+        let peoples = people[indexPath.row]
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        managedContext.delete(peoples)
+        people.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .top)
+        
+        do {
+            try managedContext.save()
+        } catch {
+            fatalError("Failure to save context: \(error)")
+        }
+        //}
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return people.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let person = people[indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        if indexPath.row < toDoItems.count
-        {
-            let item = toDoItems[indexPath.row]
-            cell.textLabel?.text = item.title
-            
-            let accessory: UITableViewCellAccessoryType = item.done ? .checkmark : .none
-            cell.accessoryType = accessory
-        }
+        //cell.textLabel?.text = names[indexPath.row]
+        cell.textLabel?.text = person.value(forKeyPath: "name") as? String
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        tableView.deselectRow(at: indexPath, animated: true)
+        //getting the index path of selected row
+        //let indexPath = tableView.indexPathForSelectedRow
         
-        if indexPath.row < toDoItems.count
-        {
-            let item = toDoItems[indexPath.row]
-            item.done = !item.done
+        let alert = UIAlertController(title: "Edit Name",
+                                      message: "edit the name",
+                                      preferredStyle: .alert)
+        
+        //Add action that will edit and save the edit
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default) {
+            [unowned self] action in
             
-            tableView.reloadRows(at: [indexPath], with: .automatic)
+            guard let textField = alert.textFields?.first,
+                let nameToSave = textField.text else {
+                    return
+            }
+            
+            self.edit(name: nameToSave, index: (indexPath as NSIndexPath) as IndexPath)
+            self.tableView.reloadData()
         }
-    }
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
-    {
-        if indexPath.row < toDoItems.count
-        {
-            toDoItems.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .top)
-        }
-    }
-    @objc
-    public func applicationDidEnterBackground(_ notification: NSNotification)
-    {
-        do
-        {
-            try toDoItems.writeToPersistence()
-        }
-        catch let error
-        {
-            NSLog("Error writing to persistence: \(error)")
-        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
+        
+        alert.addTextField()
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true)
+        //tableView.reloadRows(at: [indexPath!], with: .automatic)
+        self.tableView.reloadData()
     }
 }
+

@@ -11,10 +11,10 @@ Task organizer; integrated with calendar, organize tasks by priority
 | ------------- |:-------------:|
 |  Date/ Time String detection    |       |
 |  Add to calendar via String Detection    |       |
-|  Add Tasks    |  Jessie  - not adding   |
+|  Add Tasks    |  Jessie  - have to refresh to add  |
 |  Delete Tasks    |  Jessie     |
-|  "Finish Tasks" (i.e. Cross off)    |   Jessie (fix, right now checkmark)    |
-|  Edit Tasks    |       |
+|  "Finish Tasks" (i.e. Cross off)    |    |
+|  Edit Tasks    |   Jessie    |
 |  Prioritize Tasks    |       |
 |  Notifications/ Reminder    |       |
 |  Creation of Calendar/ Link to Google?    |       |
@@ -23,10 +23,17 @@ Task organizer; integrated with calendar, organize tasks by priority
 |  Localization    |       |
 |  Categorize Tasks    |       |
 |  Force Touch to add Tasks?    |       |
-|  “Save Tasks” (Serialization)    |   Jessie (fix, right now if close completely doesn't save)    |
+|  Core Data   |  Jessie |
+|  About Page  |  Jessie |
 
 
 
-###### Developer Note
+###### Sources
 
-    - May want to install Realm Browser by Realm from the itunes/apple store. This will let us read and edit Realm databases (Using this for persistent data).
+- https://www.raywenderlich.com/173972/getting-started-with-core-data-tutorial-2
+- https://www.youtube.com/watch?v=A6Wl8ySrOZI
+- https://www.appcoda.com/core-data-tutorial-update-delete/
+- https://www.brunophilipe.com/blog/articles/swift-tutorial-mytodo/
+- https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/CreateATableView.html
+- https://medium.com/yay-its-erica/implementing-uirefreshcontrol-on-tableviews-in-swift3-1e3610ae6da6
+- https://www.youtube.com/watch?v=DmWv-JtQH4Q
