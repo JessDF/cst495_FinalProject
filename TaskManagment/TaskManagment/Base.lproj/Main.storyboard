@@ -9,6 +9,37 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Edit View Controller-->
+        <scene sceneID="WQg-qq-qgm">
+            <objects>
+                <viewController id="jgT-28-ToI" customClass="EditViewController" customModule="TaskManagment" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f92-fo-zlf"/>
+                        <viewControllerLayoutGuide type="bottom" id="UNS-f1-Rj6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vz6-KN-vI9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvN-ng-Kml">
+                                <rect key="frame" x="166" y="323" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0aD-fc-RoZ"/>
+                    <connections>
+                        <outlet property="titleLbl" destination="pvN-ng-Kml" id="v73-eI-p3Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gMW-UD-yzX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3471" y="-564"/>
+        </scene>
         <!--Table View Controller-->
         <scene sceneID="ksJ-W2-Jd6">
             <objects>
@@ -18,18 +49,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92517872649999999" green="1" blue="0.9411681677" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="cpu-Hc-Xyk">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="cpu-Hc-Xyk" customClass="TableViewCell" customModule="TaskManagment" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cpu-Hc-Xyk" id="tpS-lF-cWp">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtC-WP-PPa">
+                                            <rect key="frame" x="145" y="7" width="52" height="30"/>
+                                            <state key="normal" title="Details"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="JtC-WP-PPa" firstAttribute="leading" secondItem="tpS-lF-cWp" secondAttribute="leading" constant="145" id="JPt-C7-XWa"/>
+                                        <constraint firstAttribute="trailing" secondItem="JtC-WP-PPa" secondAttribute="trailing" constant="145" id="N79-DN-v6K"/>
+                                        <constraint firstAttribute="trailing" secondItem="JtC-WP-PPa" secondAttribute="trailing" constant="145" id="Tdl-E2-wSc"/>
+                                        <constraint firstItem="JtC-WP-PPa" firstAttribute="centerY" secondItem="tpS-lF-cWp" secondAttribute="centerY" id="VWh-Bl-gcg"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="DetailsBtn" destination="JtC-WP-PPa" id="3AK-rx-XEc"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="cP6-Rh-r5P" id="Doc-e4-2cQ"/>
-                            <outlet property="delegate" destination="cP6-Rh-r5P" id="AEh-5T-56Z"/>
+                            <outlet property="delegate" destination="cP6-Rh-r5P" id="p0r-N4-hPt"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="e36-Kw-Fq6">
@@ -48,11 +94,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="q25-nq-Iq8" id="6x8-Wb-Bm1"/>
+                        <segue destination="jgT-28-ToI" kind="show" id="R2d-k7-NVP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k2D-qL-8Jj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2713" y="133"/>
+            <point key="canvasLocation" x="2712.8000000000002" y="132.68365817091455"/>
         </scene>
         <!--Add New Item-->
         <scene sceneID="ZEc-jL-PCi">

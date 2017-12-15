@@ -11,6 +11,7 @@ import CoreData
 
 class TableViewController: UITableViewController{
     
+
     var people: [NSManagedObject] = []
     var refresher: UIRefreshControl!
     
@@ -68,13 +69,15 @@ class TableViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "The List"
-        tableView.register(UITableViewCell.self,
-                           forCellReuseIdentifier: "Cell")
+        //tableView.register(UITableViewCell.self,
+          //                 forCellReuseIdentifier: "Cell")
         refresher = UIRefreshControl()
         tableView.addSubview(refresher)
         refresher.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refresher.tintColor = UIColor(red: 1.00, green: 0.21, blue: 0.55, alpha: 1.0) //pink
         refresher.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     func loadData() {
@@ -129,13 +132,22 @@ class TableViewController: UITableViewController{
         return people.count
     }
     
+    func detailAction() {
+        print ("button")
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let person = people[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableViewCell
         
         cell.textLabel?.text = person.value(forKeyPath: "name") as? String
-        
+        cell.DetailsBtn.tag = indexPath.row
+        cell.DetailsBtn.titleLabel?.text = "NewTitle"
+       // cell.DetailsBtn.backgroundColor = UIColor(red: 102/255, green: 250/255, blue: 51/255, alpha: 0)
+        cell.DetailsBtn.addTarget(self, action: #selector(TableViewController.detailAction), for: .touchUpInside)
+        //cell.DetailsBtn.frame = CGRectMake(100+24, 80+10, 64, 64);
+        cell.addSubview(cell.DetailsBtn)
         return cell
     }
     

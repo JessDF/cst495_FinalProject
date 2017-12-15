@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC19B5231FE1EB7D00296682 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC19B5221FE1EB7D00296682 /* TableViewCell.swift */; };
+		EC19B5251FE1F03400296682 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC19B5241FE1F03400296682 /* EditViewController.swift */; };
 		EE2770781FCF6A6B000BACC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2770771FCF6A6B000BACC7 /* AppDelegate.swift */; };
 		EE27707A1FCF6A6B000BACC7 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2770791FCF6A6B000BACC7 /* AddViewController.swift */; };
 		EE27707D1FCF6A6B000BACC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE27707B1FCF6A6B000BACC7 /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC19B5221FE1EB7D00296682 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		EC19B5241FE1F03400296682 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		EE2770741FCF6A6B000BACC7 /* TaskManagment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskManagment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE2770771FCF6A6B000BACC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE2770791FCF6A6B000BACC7 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				EE2770861FCF6A6B000BACC7 /* Info.plist */,
 				EE27707E1FCF6A6B000BACC7 /* TaskManagment.xcdatamodeld */,
 				EE2770A81FCF72E0000BACC7 /* TableViewController.swift */,
+				EC19B5241FE1F03400296682 /* EditViewController.swift */,
+				EC19B5221FE1EB7D00296682 /* TableViewCell.swift */,
 				EEDA56861FE1B0D10086AD5D /* aboutPage.swift */,
 			);
 			path = TaskManagment;
@@ -271,8 +277,10 @@
 				EE2770801FCF6A6B000BACC7 /* TaskManagment.xcdatamodeld in Sources */,
 				EE27707A1FCF6A6B000BACC7 /* AddViewController.swift in Sources */,
 				EEDA56871FE1B0D10086AD5D /* aboutPage.swift in Sources */,
+				EC19B5231FE1EB7D00296682 /* TableViewCell.swift in Sources */,
 				EE2770781FCF6A6B000BACC7 /* AppDelegate.swift in Sources */,
 				EE2770A91FCF72E0000BACC7 /* TableViewController.swift in Sources */,
+				EC19B5251FE1F03400296682 /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
