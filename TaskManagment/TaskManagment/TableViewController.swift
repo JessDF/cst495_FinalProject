@@ -124,7 +124,7 @@ class TableViewController: UITableViewController{
         } catch {
             fatalError("Failure to save context: \(error)")
         }
-        //}
+       
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -143,11 +143,7 @@ class TableViewController: UITableViewController{
         
         cell.textLabel?.text = person.value(forKeyPath: "name") as? String
         cell.DetailsBtn.tag = indexPath.row
-        cell.DetailsBtn.titleLabel?.text = "NewTitle"
-       // cell.DetailsBtn.backgroundColor = UIColor(red: 102/255, green: 250/255, blue: 51/255, alpha: 0)
-        cell.DetailsBtn.addTarget(self, action: #selector(TableViewController.detailAction), for: .touchUpInside)
-        //cell.DetailsBtn.frame = CGRectMake(100+24, 80+10, 64, 64);
-        cell.addSubview(cell.DetailsBtn)
+               cell.DetailsBtn.addTarget(self, action: #selector(TableViewController.detailAction), for: .touchUpInside)
         return cell
     }
     

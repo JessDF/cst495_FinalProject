@@ -14,6 +14,9 @@ class TableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.addSubview(DetailsBtn)
+        
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
