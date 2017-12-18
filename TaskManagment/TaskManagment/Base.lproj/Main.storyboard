@@ -116,37 +116,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bckgrnd" translatesAutoresizingMaskIntoConstraints="NO" id="RUq-Ax-bDA">
-                                <rect key="frame" x="-49" y="-83" width="585" height="1093"/>
+                                <rect key="frame" x="-148" y="-31" width="688" height="775"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add/ Create a Title: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMb-2Z-OX6">
-                                <rect key="frame" x="42" y="160" width="152" height="21"/>
+                                <rect key="frame" x="113" y="168" width="152" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zHl-cW-hT8">
-                                <rect key="frame" x="139" y="189" width="149" height="30"/>
+                                <rect key="frame" x="113" y="207" width="149" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add a Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6z-RO-Rnr">
-                                <rect key="frame" x="42" y="295" width="141" height="21"/>
+                                <rect key="frame" x="113" y="289" width="141" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w2q-bi-xiS">
-                                <rect key="frame" x="139" y="341" width="149" height="30"/>
+                                <rect key="frame" x="113" y="333" width="149" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9G-s9-HB4" userLabel="addBtn">
+                                <rect key="frame" x="141" y="420" width="85" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="addBtn"/>
+                            </button>
                         </subviews>
                     </view>
                     <toolbarItems/>
@@ -170,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cO0-kY-xGN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4692" y="132.68365817091455"/>
+            <point key="canvasLocation" x="4704.8000000000002" y="70.614692653673174"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZSa-f9-x5m">
@@ -255,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6N-Az-bbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1796" y="990.85457271364328"/>
+            <point key="canvasLocation" x="1796" y="1020"/>
         </scene>
         <!--About Page-->
         <scene sceneID="Xu1-6d-jkA">
@@ -312,6 +317,7 @@ Task organizer: integrated with calendar, organize tasks by priority</string>
     </scenes>
     <resources>
         <image name="TaskOrganizer" width="1026" height="202"/>
+        <image name="addBtn" width="1006" height="1003"/>
         <image name="bckgrnd" width="1280" height="1280"/>
     </resources>
 </document>
