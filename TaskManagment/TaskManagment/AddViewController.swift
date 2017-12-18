@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import EventKit
 
 class AddViewController: UIViewController, UITextViewDelegate{
     
@@ -53,5 +54,43 @@ class AddViewController: UIViewController, UITextViewDelegate{
             super.viewDidLoad()
         }
         
+        @IBAction func AddToCalTapped(_ sender: Any) {
+            
+            print("Adding to calendar....")
+            let eventStore: EKEventStore = EKEventStore()
+            
+            eventStore.requestAccess(to: .event, completion: {(granted, error) in
+                
+                if (granted) && (error  == nil)
+                {
+                    print("granted\(granted)")
+                    print("error\(error)")
+                    
+                    let event:EKEvent = EKEvent(eventStore: eventStore)
+                    event.title = "My b-day"
+                    event.startDate = Date()
+                    event.endDate = Date()
+                    event.notes = "Okurrrr"
+                    event.calendar = eventStore.defaultCalendarForNewEvents
+                    do{
+                        try eventStore.save(event, span: .thisEvent)
+                    }
+                    catch let error as NSError{
+                        print("Error: \(error)")
+                        
+                    }
+                    print("Save Event")
+                    
+                }else{
+                    print("Error:\(error)")
+                }
+                /*Check out the new logo that I created on <a href="http:logomakr.com" title="Logo Makr">LogoMakr.com</a> //https://logomakr.com/2ttQtn
+                 */
+                
+            })
+        
+
+        
+    }
 }
 

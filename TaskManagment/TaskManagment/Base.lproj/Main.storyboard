@@ -151,6 +151,9 @@
                                 <rect key="frame" x="141" y="420" width="85" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="addBtn"/>
+                                <connections>
+                                    <action selector="AddToCalTapped:" destination="WSb-6o-iD6" eventType="touchUpInside" id="eEh-QR-j4j"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>
