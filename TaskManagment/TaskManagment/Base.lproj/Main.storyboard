@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -47,26 +48,28 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="q25-nq-Iq8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.92517872649999999" green="1" blue="0.9411681677" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bckgrnd" id="YQT-CC-35J">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="cpu-Hc-Xyk" customClass="TableViewCell" customModule="TaskManagment" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="60" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cpu-Hc-Xyk" id="tpS-lF-cWp">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtC-WP-PPa">
-                                            <rect key="frame" x="145" y="7" width="52" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtC-WP-PPa">
+                                            <rect key="frame" x="282" y="6" width="52" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Details"/>
+                                            <connections>
+                                                <segue destination="jgT-28-ToI" kind="show" id="o4x-MG-8N0"/>
+                                            </connections>
                                         </button>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="JtC-WP-PPa" firstAttribute="leading" secondItem="tpS-lF-cWp" secondAttribute="leading" constant="145" id="JPt-C7-XWa"/>
-                                        <constraint firstAttribute="trailing" secondItem="JtC-WP-PPa" secondAttribute="trailing" constant="145" id="N79-DN-v6K"/>
-                                        <constraint firstAttribute="trailing" secondItem="JtC-WP-PPa" secondAttribute="trailing" constant="145" id="Tdl-E2-wSc"/>
-                                        <constraint firstItem="JtC-WP-PPa" firstAttribute="centerY" secondItem="tpS-lF-cWp" secondAttribute="centerY" id="VWh-Bl-gcg"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="DetailsBtn" destination="JtC-WP-PPa" id="3AK-rx-XEc"/>
@@ -94,7 +97,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="q25-nq-Iq8" id="6x8-Wb-Bm1"/>
-                        <segue destination="jgT-28-ToI" kind="show" id="R2d-k7-NVP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k2D-qL-8Jj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -113,36 +115,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bckgrnd" translatesAutoresizingMaskIntoConstraints="NO" id="RUq-Ax-bDA">
+                                <rect key="frame" x="-148" y="-31" width="688" height="775"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add/ Create a Title: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMb-2Z-OX6">
-                                <rect key="frame" x="42" y="160" width="152" height="21"/>
+                                <rect key="frame" x="113" y="168" width="152" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zHl-cW-hT8">
-                                <rect key="frame" x="139" y="189" width="149" height="30"/>
+                                <rect key="frame" x="113" y="207" width="149" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add a Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6z-RO-Rnr">
-                                <rect key="frame" x="42" y="295" width="141" height="21"/>
+                                <rect key="frame" x="113" y="289" width="141" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w2q-bi-xiS">
-                                <rect key="frame" x="139" y="341" width="149" height="30"/>
+                                <rect key="frame" x="113" y="333" width="149" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9G-s9-HB4" userLabel="addBtn">
+                                <rect key="frame" x="141" y="420" width="85" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="addBtn"/>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.92517872651129907" green="1" blue="0.94116816765293432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Add New Item" id="BYt-0v-dCt">
@@ -165,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cO0-kY-xGN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4692" y="132.68365817091455"/>
+            <point key="canvasLocation" x="4704.8000000000002" y="70.614692653673174"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZSa-f9-x5m">
@@ -203,6 +213,55 @@
             </objects>
             <point key="canvasLocation" x="1824.8" y="132.68365817091455"/>
         </scene>
+        <!--Calendar View Controller-->
+        <scene sceneID="yku-Qj-EiT">
+            <objects>
+                <viewController id="RZr-GX-U1F" customClass="CalendarViewController" customModule="TaskManagment" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JpR-kx-sMA"/>
+                        <viewControllerLayoutGuide type="bottom" id="f9f-Nl-8xE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PDV-Af-XV1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bckgrnd" translatesAutoresizingMaskIntoConstraints="NO" id="UDt-C0-mHH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWB-LG-FCY">
+                                <rect key="frame" x="115" y="280" width="172" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Tt3-rd-zrB"/>
+                                </constraints>
+                                <state key="normal" title="Click here to add event"/>
+                                <connections>
+                                    <action selector="AddEventBtnTapped:" destination="RZr-GX-U1F" eventType="touchUpInside" id="av7-QV-3ab"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TaskOrganizer" translatesAutoresizingMaskIntoConstraints="NO" id="fuU-UI-jRN">
+                                <rect key="frame" x="68" y="197" width="266" height="75"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fuU-UI-jRN" firstAttribute="leading" secondItem="PDV-Af-XV1" secondAttribute="leadingMargin" constant="52" id="0Sk-v1-qHa"/>
+                            <constraint firstItem="fuU-UI-jRN" firstAttribute="centerX" secondItem="tWB-LG-FCY" secondAttribute="centerX" id="47x-7V-lZ8"/>
+                            <constraint firstItem="tWB-LG-FCY" firstAttribute="leading" secondItem="PDV-Af-XV1" secondAttribute="leadingMargin" constant="99" id="49D-z4-PJY"/>
+                            <constraint firstAttribute="trailing" secondItem="UDt-C0-mHH" secondAttribute="trailing" id="Dbz-2g-ZMz"/>
+                            <constraint firstItem="UDt-C0-mHH" firstAttribute="leading" secondItem="PDV-Af-XV1" secondAttribute="leading" id="GvQ-7L-wwh"/>
+                            <constraint firstItem="tWB-LG-FCY" firstAttribute="top" secondItem="fuU-UI-jRN" secondAttribute="bottom" constant="8" id="IDe-j6-VhJ"/>
+                            <constraint firstItem="UDt-C0-mHH" firstAttribute="bottom" secondItem="f9f-Nl-8xE" secondAttribute="top" id="L9n-1A-cvi"/>
+                            <constraint firstItem="fuU-UI-jRN" firstAttribute="top" secondItem="JpR-kx-sMA" secondAttribute="bottom" constant="177" id="QXu-5T-SEo"/>
+                            <constraint firstItem="f9f-Nl-8xE" firstAttribute="top" secondItem="tWB-LG-FCY" secondAttribute="bottom" constant="357" id="mah-R0-Tpq"/>
+                            <constraint firstItem="UDt-C0-mHH" firstAttribute="top" secondItem="PDV-Af-XV1" secondAttribute="top" id="rbe-Hm-RmL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fuU-UI-jRN" secondAttribute="trailing" constant="25" id="xkb-U9-yyV"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A6N-Az-bbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1796" y="1020"/>
+        </scene>
         <!--About Page-->
         <scene sceneID="Xu1-6d-jkA">
             <objects>
@@ -214,19 +273,21 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bckgrnd" translatesAutoresizingMaskIntoConstraints="NO" id="9gA-EM-U5W">
+                                    <rect key="frame" x="0.0" y="0.0" width="399" height="847"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LKD-Gb-C62">
-                                    <rect key="frame" x="67" y="129" width="240" height="416"/>
+                                    <rect key="frame" x="79" y="240" width="240" height="119"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FUN-Gr-b47">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="416"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="142"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <string key="text">Members: Meya Gorbea, Cristian Galvan, Jessie Dowding
 
-Short Description
-
-Task organizer; integrated with calendar, organize tasks by priority</string>
+Task organizer: integrated with calendar, organize tasks by priority</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
@@ -235,13 +296,12 @@ Task organizer; integrated with calendar, organize tasks by priority</string>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="0.99876549979999996" green="0.97843635620000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <gestureRecognizers/>
                             <connections>
                                 <outletCollection property="gestureRecognizers" destination="wLQ-nf-Y8s" appends="YES" id="mqN-i8-OEO"/>
                             </connections>
                         </view>
-                        <color key="backgroundColor" red="0.92517872649999999" green="1" blue="0.9411681677" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="0.66397283679999997" green="0.90051452710000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <blurEffect style="light"/>
                     </visualEffectView>
                 </viewController>
@@ -252,7 +312,12 @@ Task organizer; integrated with calendar, organize tasks by priority</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2713" y="1020"/>
+            <point key="canvasLocation" x="2712.8000000000002" y="1019.640179910045"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="TaskOrganizer" width="1026" height="202"/>
+        <image name="addBtn" width="1006" height="1003"/>
+        <image name="bckgrnd" width="1280" height="1280"/>
+    </resources>
 </document>
