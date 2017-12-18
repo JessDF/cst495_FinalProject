@@ -10,14 +10,14 @@ Task organizer; integrated with calendar, organize tasks by priority
 | Feature        | Who         | 
 | ------------- |:-------------:|
 |  Date/ Time String detection    |       |
-|  Add to calendar via String Detection    |       |
+|  Add to calendar via String Detection    |   Meya    |
 |  Add Tasks    |  Jessie  - have to refresh to add  |
 |  Delete Tasks    |  Jessie     |
 |  "Finish Tasks" (i.e. Cross off)    |    |
 |  Edit Tasks    |   Jessie    |
 |  Prioritize Tasks    |       |
 |  Notifications/ Reminder    |       |
-|  Creation of Calendar/ Link to Google?    |       |
+|  Creation of Calendar/ Link to Google?    |    Meya   |
 |  Unit testing   |       |
 |  Internationalization    |       |
 |  Localization    |       |
