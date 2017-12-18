@@ -69,6 +69,7 @@ class TableViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "The List"
+        self.tableView.isEditing = true
         //tableView.register(UITableViewCell.self,
           //                 forCellReuseIdentifier: "Cell")
         refresher = UIRefreshControl()
@@ -83,6 +84,17 @@ class TableViewController: UITableViewController{
     func loadData() {
         tableView.reloadData()
         refresher.endRefreshing()
+    }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedObject = people[sourceIndexPath.row]
+        
+        //Delete
+        people.remove(at: sourceIndexPath.row)
+        
+        //Move
+        people.insert(movedObject, at: destinationIndexPath.row)
+        NSLog("%@", "\(sourceIndexPath.row) => \(destinationIndexPath.row)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -124,7 +136,6 @@ class TableViewController: UITableViewController{
         } catch {
             fatalError("Failure to save context: \(error)")
         }
-        //}
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
