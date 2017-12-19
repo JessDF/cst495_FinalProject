@@ -12,10 +12,15 @@ import EventKit
 
 class AddViewController: UIViewController, UITextViewDelegate{
     
+    @IBOutlet weak var startDate: UIDatePicker!
+    @IBOutlet weak var endDate: UIDatePicker!
+    
+    
         @IBOutlet weak var saveButton: UIBarButtonItem!
         var people: [NSManagedObject] = []
-        @IBOutlet weak var textField: UITextField!
-        
+        @IBOutlet weak var textField: UITextField! // title
+        @IBOutlet weak var DesTitle: UITextField! //description
+    
         @IBAction func save(_ sender: Any) {//UIStoryboardSegue
             let text = textField.text ?? ""
             if(!text.isEmpty) {
@@ -58,6 +63,9 @@ class AddViewController: UIViewController, UITextViewDelegate{
             
             print("Adding to calendar....")
             let eventStore: EKEventStore = EKEventStore()
+            let eventTitle = textField.text ?? ""
+            let description = DesTitle.text ?? ""
+            
             
             eventStore.requestAccess(to: .event, completion: {(granted, error) in
                 
@@ -67,10 +75,10 @@ class AddViewController: UIViewController, UITextViewDelegate{
                     print("error\(error)")
                     
                     let event:EKEvent = EKEvent(eventStore: eventStore)
-                    event.title = "My b-day"
-                    event.startDate = Date()
-                    event.endDate = Date()
-                    event.notes = "Okurrrr"
+                    event.title = eventTitle
+                    event.startDate = self.startDate.date
+                    event.endDate = self.endDate.date
+                    event.notes = description
                     event.calendar = eventStore.defaultCalendarForNewEvents
                     do{
                         try eventStore.save(event, span: .thisEvent)
@@ -88,8 +96,6 @@ class AddViewController: UIViewController, UITextViewDelegate{
                  */
                 
             })
-        
-
         
     }
 }
