@@ -22,19 +22,12 @@ class CalendarViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-        
-        
         
     @IBAction func startBtnTapped(_ sender: Any) {
         performSegue(withIdentifier: "mainSeg", sender: sender)
         
     }
-    
-    
-    
-
-    /*
+        /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
