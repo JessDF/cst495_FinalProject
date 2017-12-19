@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zbg-fL-x15">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RZr-GX-U1F">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="3471" y="-564"/>
         </scene>
-        <!--Table View Controller-->
+        <!--main-->
         <scene sceneID="ksJ-W2-Jd6">
             <objects>
-                <tableViewController id="cP6-Rh-r5P" customClass="TableViewController" customModule="TaskManagment" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="main" id="cP6-Rh-r5P" customClass="TableViewController" customModule="TaskManagment" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="q25-nq-Iq8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -267,34 +267,37 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Tt3-rd-zrB"/>
                                 </constraints>
-                                <state key="normal" title="Click here to add event"/>
+                                <state key="normal" title="Let's get started"/>
                                 <connections>
-                                    <action selector="AddEventBtnTapped:" destination="RZr-GX-U1F" eventType="touchUpInside" id="av7-QV-3ab"/>
+                                    <action selector="startBtnTapped:" destination="RZr-GX-U1F" eventType="touchUpInside" id="7eW-db-qeA"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TaskOrganizer" translatesAutoresizingMaskIntoConstraints="NO" id="fuU-UI-jRN">
-                                <rect key="frame" x="68" y="197" width="266" height="75"/>
+                                <rect key="frame" x="78" y="200" width="256" height="72"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fuU-UI-jRN" firstAttribute="leading" secondItem="PDV-Af-XV1" secondAttribute="leadingMargin" constant="52" id="0Sk-v1-qHa"/>
-                            <constraint firstItem="fuU-UI-jRN" firstAttribute="centerX" secondItem="tWB-LG-FCY" secondAttribute="centerX" id="47x-7V-lZ8"/>
+                            <constraint firstItem="fuU-UI-jRN" firstAttribute="leading" secondItem="PDV-Af-XV1" secondAttribute="leadingMargin" constant="62" id="0Sk-v1-qHa"/>
+                            <constraint firstItem="fuU-UI-jRN" firstAttribute="centerX" secondItem="tWB-LG-FCY" secondAttribute="centerX" constant="5" id="47x-7V-lZ8"/>
                             <constraint firstItem="tWB-LG-FCY" firstAttribute="leading" secondItem="PDV-Af-XV1" secondAttribute="leadingMargin" constant="99" id="49D-z4-PJY"/>
                             <constraint firstAttribute="trailing" secondItem="UDt-C0-mHH" secondAttribute="trailing" id="Dbz-2g-ZMz"/>
                             <constraint firstItem="UDt-C0-mHH" firstAttribute="leading" secondItem="PDV-Af-XV1" secondAttribute="leading" id="GvQ-7L-wwh"/>
                             <constraint firstItem="tWB-LG-FCY" firstAttribute="top" secondItem="fuU-UI-jRN" secondAttribute="bottom" constant="8" id="IDe-j6-VhJ"/>
                             <constraint firstItem="UDt-C0-mHH" firstAttribute="bottom" secondItem="f9f-Nl-8xE" secondAttribute="top" id="L9n-1A-cvi"/>
-                            <constraint firstItem="fuU-UI-jRN" firstAttribute="top" secondItem="JpR-kx-sMA" secondAttribute="bottom" constant="177" id="QXu-5T-SEo"/>
+                            <constraint firstItem="fuU-UI-jRN" firstAttribute="top" secondItem="JpR-kx-sMA" secondAttribute="bottom" constant="180" id="QXu-5T-SEo"/>
                             <constraint firstItem="f9f-Nl-8xE" firstAttribute="top" secondItem="tWB-LG-FCY" secondAttribute="bottom" constant="357" id="mah-R0-Tpq"/>
                             <constraint firstItem="UDt-C0-mHH" firstAttribute="top" secondItem="PDV-Af-XV1" secondAttribute="top" id="rbe-Hm-RmL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fuU-UI-jRN" secondAttribute="trailing" constant="25" id="xkb-U9-yyV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="zbg-fL-x15" kind="show" identifier="mainSeg" id="0YH-H4-Cgz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6N-Az-bbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1796" y="1020"/>
+            <point key="canvasLocation" x="881" y="230"/>
         </scene>
         <!--About Page-->
         <scene sceneID="Xu1-6d-jkA">
