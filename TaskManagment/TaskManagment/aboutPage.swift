@@ -15,5 +15,13 @@ class aboutPage: UIViewController {
     @IBAction func tapGesture(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    
+    
+    @IBAction func backTapped(_ sender: Any) {
+        performSegue(withIdentifier: "backToMain", sender: sender)
+        
+    }
+    
 }
 

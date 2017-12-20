@@ -299,10 +299,10 @@
             </objects>
             <point key="canvasLocation" x="881" y="230"/>
         </scene>
-        <!--About Page-->
+        <!--BackToMain-->
         <scene sceneID="Xu1-6d-jkA">
             <objects>
-                <viewController id="dbF-0u-ce7" customClass="aboutPage" customModule="TaskManagment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="BackToMain" id="dbF-0u-ce7" customClass="aboutPage" customModule="TaskManagment" customModuleProvider="target" sceneMemberID="viewController">
                     <visualEffectView key="view" contentMode="scaleToFill" id="jhw-Cd-5iw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -331,6 +331,15 @@ Task organizer: integrated with calendar, organize tasks by priority</string>
                                     </subviews>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goK-nf-6dj">
+                                    <rect key="frame" x="25" y="22" width="46" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="Back"/>
+                                    <connections>
+                                        <action selector="backTapped:" destination="dbF-0u-ce7" eventType="touchUpInside" id="xPA-ap-Q7m"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <color key="tintColor" red="0.99876549979999996" green="0.97843635620000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -341,6 +350,9 @@ Task organizer: integrated with calendar, organize tasks by priority</string>
                         </view>
                         <blurEffect style="light"/>
                     </visualEffectView>
+                    <connections>
+                        <segue destination="zbg-fL-x15" kind="show" identifier="backToMain" id="i8e-VI-th7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s4f-o4-fO6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="wLQ-nf-Y8s">
@@ -349,7 +361,7 @@ Task organizer: integrated with calendar, organize tasks by priority</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2712.8000000000002" y="1019.640179910045"/>
+            <point key="canvasLocation" x="2712.8000000000002" y="996.25187406296857"/>
         </scene>
     </scenes>
     <resources>
@@ -357,4 +369,7 @@ Task organizer: integrated with calendar, organize tasks by priority</string>
         <image name="addBtn" width="1006" height="1003"/>
         <image name="bckgrnd" width="1280" height="1280"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="i8e-VI-th7"/>
+    </inferredMetricsTieBreakers>
 </document>
