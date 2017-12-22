@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 class aboutPage: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,7 +16,6 @@ class aboutPage: UIViewController {
     @IBAction func tapGesture(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
     
     
     @IBAction func backTapped(_ sender: Any) {
