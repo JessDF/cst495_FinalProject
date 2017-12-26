@@ -24,7 +24,7 @@ Task organizer; integrated with calendar, organize tasks by priority
 
 
 
-###### For More Info on Project See Wiki Page
+<h6 align="center"> For More Info on this Project see the Wiki Page </h6>
 
 
 
