@@ -9,35 +9,22 @@ Task organizer; integrated with calendar, organize tasks by priority
 
 | Feature        | Who         | 
 | ------------- |:-------------:|
-|  Date/ Time String detection    |       |
+|  Date/ Time String detection    |   Add to Calendar   |
 |  Add to calendar via String Detection    |   Meya    |
 |  Add Tasks    |  Jessie  - have to refresh to add  |
 |  Delete Tasks    |  Jessie     |
-|  "Finish Tasks" (i.e. Cross off)    |    |
+|  "Finish Tasks" (i.e. Cross off)    |  Meya  |
 |  Edit Tasks    |   Jessie    |
 |  Prioritize Tasks    |   Jessie    |
 |  Notifications/ Reminder    |    Meya   |
 |  Creation of Calendar/ Link to Google?    |    Meya   |
-|  Unit testing   |       |
-|  Internationalization    |       |
-|  Localization    |       |
-|  Categorize Tasks    |       |
-|  Force Touch to add Tasks?    |       |
+|  Categorize Tasks    |    Jessie   |
 |  Core Data   |  Jessie |
 |  About Page  |  Jessie |
 
 
 
-###### Sources
-
-- https://www.raywenderlich.com/173972/getting-started-with-core-data-tutorial-2
-- https://www.youtube.com/watch?v=A6Wl8ySrOZI
-- https://www.appcoda.com/core-data-tutorial-update-delete/
-- https://www.brunophilipe.com/blog/articles/swift-tutorial-mytodo/
-- https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/CreateATableView.html
-- https://medium.com/yay-its-erica/implementing-uirefreshcontrol-on-tableviews-in-swift3-1e3610ae6da6
-- https://www.youtube.com/watch?v=DmWv-JtQH4Q
+###### For More Info on Project See Wiki Page
 
 
-###### Next steps
 
