@@ -1,5 +1,5 @@
 //
-//  EditViewController.swift
+//  DetailsViewController.swift
 //  TaskManagment
 //
 //  Created by Meya Gorbea on 12/13/17.
@@ -8,16 +8,17 @@
 
 import UIKit
 
-class EditViewController: UIViewController {
+class DetailsViewController: UIViewController {
 
     @IBOutlet weak var titleLbl: UILabel!
+    var titleName:String = ""
     
     //var titleString : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.titleLbl.text = "Hey"
+        self.titleLbl.text = titleName
 
         // Do any additional setup after loading the view.
     }

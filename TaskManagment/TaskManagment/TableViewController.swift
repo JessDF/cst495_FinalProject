@@ -14,7 +14,21 @@ class TableViewController: UITableViewController{
 
     var people: [NSManagedObject] = []
     var refresher: UIRefreshControl!
+    let detailsSegueIdentifier = "ShowDetailsSegue"
     
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        print("In segue")
+
+        if segue.identifier == detailsSegueIdentifier {
+            let button:UIButton = sender as! UIButton
+            //let indexPath = tableView.indexPath(for: selectedCell)
+            let destinationViewController = segue.destination as? DetailsViewController
+            let person = people[(button.tag)]
+            destinationViewController?.titleName = person.value(forKeyPath: "name") as! String
+        }
+    }
     func save(name: String) {
         
         guard let appDelegate =
@@ -143,10 +157,6 @@ class TableViewController: UITableViewController{
         return people.count
     }
     
-    func detailAction() {
-        print ("button")
-    }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let person = people[indexPath.row]
         
@@ -154,9 +164,10 @@ class TableViewController: UITableViewController{
         
         cell.textLabel?.text = person.value(forKeyPath: "name") as? String
         cell.DetailsBtn.tag = indexPath.row
-               cell.DetailsBtn.addTarget(self, action: #selector(TableViewController.detailAction), for: .touchUpInside)
+        //cell.DetailsBtn.addTarget(self, action: #selector(TableViewController.detailAction), for: .touchUpInside)
         return cell
     }
+   
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {

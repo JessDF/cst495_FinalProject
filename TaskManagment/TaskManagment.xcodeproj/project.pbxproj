@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EC19B5231FE1EB7D00296682 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC19B5221FE1EB7D00296682 /* TableViewCell.swift */; };
-		EC19B5251FE1F03400296682 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC19B5241FE1F03400296682 /* EditViewController.swift */; };
+		EC19B5251FE1F03400296682 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC19B5241FE1F03400296682 /* DetailsViewController.swift */; };
 		EC6743091FE473260099A469 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6743081FE473260099A469 /* CalendarViewController.swift */; };
 		EE2770781FCF6A6B000BACC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2770771FCF6A6B000BACC7 /* AppDelegate.swift */; };
 		EE27707A1FCF6A6B000BACC7 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2770791FCF6A6B000BACC7 /* AddViewController.swift */; };
@@ -41,7 +41,7 @@
 
 /* Begin PBXFileReference section */
 		EC19B5221FE1EB7D00296682 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		EC19B5241FE1F03400296682 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		EC19B5241FE1F03400296682 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		EC6743081FE473260099A469 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarViewController.swift; path = ../CalendarViewController.swift; sourceTree = "<group>"; };
 		EE2770741FCF6A6B000BACC7 /* TaskManagment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskManagment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE2770771FCF6A6B000BACC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 				EE2770861FCF6A6B000BACC7 /* Info.plist */,
 				EE27707E1FCF6A6B000BACC7 /* TaskManagment.xcdatamodeld */,
 				EE2770A81FCF72E0000BACC7 /* TableViewController.swift */,
-				EC19B5241FE1F03400296682 /* EditViewController.swift */,
+				EC19B5241FE1F03400296682 /* DetailsViewController.swift */,
 				EC19B5221FE1EB7D00296682 /* TableViewCell.swift */,
 				EEDA56861FE1B0D10086AD5D /* aboutPage.swift */,
 			);
@@ -284,7 +284,7 @@
 				EC19B5231FE1EB7D00296682 /* TableViewCell.swift in Sources */,
 				EE2770781FCF6A6B000BACC7 /* AppDelegate.swift in Sources */,
 				EE2770A91FCF72E0000BACC7 /* TableViewController.swift in Sources */,
-				EC19B5251FE1F03400296682 /* EditViewController.swift in Sources */,
+				EC19B5251FE1F03400296682 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

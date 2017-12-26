@@ -41,8 +41,8 @@ Task organizer; integrated with calendar, organize tasks by priority
 
 ###### Next steps
 
-- Edit should be a button not when item tapped
+- Edit should be a button not when item tapped 
 - When item held down/ or create a button, mark as done
 - Save description to core data
-- When item tapped, show title and description
-- Add to calendar
+- When item tapped, show title and description - Jessie Working on
+- Add to calendar - Meya Completed
