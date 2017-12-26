@@ -15,8 +15,8 @@ Task organizer; integrated with calendar, organize tasks by priority
 |  Delete Tasks    |  Jessie     |
 |  "Finish Tasks" (i.e. Cross off)    |    |
 |  Edit Tasks    |   Jessie    |
-|  Prioritize Tasks    |       |
-|  Notifications/ Reminder    |       |
+|  Prioritize Tasks    |   Jessie    |
+|  Notifications/ Reminder    |    Meya   |
 |  Creation of Calendar/ Link to Google?    |    Meya   |
 |  Unit testing   |       |
 |  Internationalization    |       |
@@ -42,7 +42,6 @@ Task organizer; integrated with calendar, organize tasks by priority
 ###### Next steps
 
 - Edit should be a button not when item tapped
-- When item held down/ or create a button, mark as done
 - Save description to core data
 - When item tapped, show title and description
-- Add to calendar
+
