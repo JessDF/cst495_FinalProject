@@ -43,6 +43,7 @@ class AddViewController: UIViewController, UITextViewDelegate{
             let person = NSManagedObject(entity: entity, insertInto: managedContext)
             
             person.setValue(textField.text, forKeyPath: "name")
+            person.setValue(DesTitle.text, forKeyPath: "details")
             
             do {
                 try managedContext.save()

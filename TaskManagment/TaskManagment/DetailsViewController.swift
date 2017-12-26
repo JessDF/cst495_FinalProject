@@ -12,6 +12,8 @@ class DetailsViewController: UIViewController {
 
     @IBOutlet weak var titleLbl: UILabel!
     var titleName:String = ""
+    @IBOutlet weak var descripLbl: UILabel!
+    var descripName:String = ""
     
     //var titleString : String!
     
@@ -19,6 +21,7 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         
         self.titleLbl.text = titleName
+        self.descripLbl.text = descripName
 
         // Do any additional setup after loading the view.
     }

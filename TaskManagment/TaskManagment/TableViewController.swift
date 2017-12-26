@@ -27,6 +27,7 @@ class TableViewController: UITableViewController{
             let destinationViewController = segue.destination as? DetailsViewController
             let person = people[(button.tag)]
             destinationViewController?.titleName = person.value(forKeyPath: "name") as! String
+            destinationViewController?.descripName = person.value(forKeyPath: "details") as! String
         }
     }
     func save(name: String) {
