@@ -5,6 +5,8 @@
 //  Created by Jessie Dowding on 11/29/17.
 //  Copyright © 2017 Cristian Meya Jessie. All rights reserved.
 //
+//  This is the table view page where all the todo list items will be displayed. 
+//
 
 import UIKit
 import CoreData
@@ -153,6 +155,7 @@ class TableViewController: UITableViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableViewCell
         
         cell.textLabel?.text = person.value(forKeyPath: "name") as? String
+        
         cell.DetailsBtn.tag = indexPath.row
                cell.DetailsBtn.addTarget(self, action: #selector(TableViewController.detailAction), for: .touchUpInside)
         return cell
@@ -188,5 +191,7 @@ class TableViewController: UITableViewController{
         present(alert, animated: true)
         self.tableView.reloadData()
     }
+    
+
 }
 

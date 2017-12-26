@@ -5,6 +5,7 @@
 //  Created by Meya Gorbea on 12/13/17.
 //  Copyright © 2017 Cristian Meya Jessie. All rights reserved.
 //
+//  This details page will show all details of a certain to do item 
 
 import UIKit
 

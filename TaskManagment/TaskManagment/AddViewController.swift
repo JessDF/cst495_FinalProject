@@ -1,10 +1,13 @@
 //
 //  ViewController.swift
 //  TaskManagment
-//
 //  Created by Jessie Dowding on 11/29/17.
 //  Copyright © 2017 Cristian Meya Jessie. All rights reserved.
 //
+//  This page creates an event and saves it to the 'To-Do list' and also has the 
+//  ability to add the item to the Apple calendar. 
+//
+
 
 import UIKit
 import CoreData

@@ -264,10 +264,13 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWB-LG-FCY">
                                 <rect key="frame" x="115" y="280" width="172" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Tt3-rd-zrB"/>
                                 </constraints>
-                                <state key="normal" title="Let's get started"/>
+                                <state key="normal" title="Let's get started">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="startBtnTapped:" destination="RZr-GX-U1F" eventType="touchUpInside" id="7eW-db-qeA"/>
                                 </connections>
@@ -292,6 +295,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="startBtn" destination="tWB-LG-FCY" id="JVT-3d-0l0"/>
                         <segue destination="zbg-fL-x15" kind="show" identifier="mainSeg" id="0YH-H4-Cgz"/>
                     </connections>
                 </viewController>
@@ -370,6 +374,6 @@ Task organizer: integrated with calendar, organize tasks by priority</string>
         <image name="bckgrnd" width="1280" height="1280"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="i8e-VI-th7"/>
+        <segue reference="0YH-H4-Cgz"/>
     </inferredMetricsTieBreakers>
 </document>
