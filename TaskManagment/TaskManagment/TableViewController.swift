@@ -18,7 +18,6 @@ class TableViewController: UITableViewController{
     var refresher: UIRefreshControl!
     let detailsSegueIdentifier = "ShowDetailsSegue"
     
-<<<<<<< HEAD
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -33,7 +32,7 @@ class TableViewController: UITableViewController{
             destinationViewController?.descripName = person.value(forKeyPath: "details") as! String
         }
     }
-=======
+
     @IBAction func `switch`(_ sender: UISwitch) {
         
         if (sender.isOn == true){
@@ -46,9 +45,6 @@ class TableViewController: UITableViewController{
         
     }
     
-    
-    
->>>>>>> 8af12f9681ad914f896ed460b9d5143c0d6b461f
     func save(name: String) {
         
         guard let appDelegate =
