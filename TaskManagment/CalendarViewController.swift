@@ -1,9 +1,9 @@
-//
 //  CalendarViewController.swift
 //  TaskManagment
-//
 //  Created by Meya Gorbea on 12/15/17.
 //  Copyright © 2017 Cristian Meya Jessie. All rights reserved.
+//
+//  This is the stat page of the app. Contains a "Get Started button"
 //
 
 import UIKit
@@ -11,8 +11,10 @@ import EventKit
 
 class CalendarViewController: UIViewController {
 
+    @IBOutlet weak var startBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        startBtn.layer.cornerRadius = 10
 
         // Do any additional setup after loading the view.
     }

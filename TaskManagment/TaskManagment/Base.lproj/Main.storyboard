@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -104,18 +105,30 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="e36-Kw-Fq6">
-                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="iP7-pR-lKt">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="iP7-pR-lKt">
                             <connections>
                                 <action selector="playButton:" destination="cP6-Rh-r5P" id="HMN-x0-fRv"/>
                                 <segue destination="dbF-0u-ce7" kind="modal" id="cVW-X9-ifG"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jqx-4W-6nX">
-                            <connections>
-                                <action selector="addName:" destination="cP6-Rh-r5P" id="ooo-uy-yKW"/>
-                                <segue destination="Z51-at-ncC" kind="modal" id="oNI-5J-sXP"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="Jqx-4W-6nX">
+                                <connections>
+                                    <action selector="addName:" destination="cP6-Rh-r5P" id="ooo-uy-yKW"/>
+                                    <segue destination="Z51-at-ncC" kind="modal" id="oNI-5J-sXP"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="Hj9-dp-b4c">
+                                <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="dbg-pa-Eaf">
+                                    <rect key="frame" x="273.5" y="6" width="51" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <connections>
+                                        <action selector="switch:" destination="cP6-Rh-r5P" eventType="valueChanged" id="OEh-Y6-l1R"/>
+                                    </connections>
+                                </switch>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="q25-nq-Iq8" id="6x8-Wb-Bm1"/>
@@ -286,10 +299,13 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWB-LG-FCY">
                                 <rect key="frame" x="115" y="280" width="172" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Tt3-rd-zrB"/>
                                 </constraints>
-                                <state key="normal" title="Let's get started"/>
+                                <state key="normal" title="Let's get started">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="startBtnTapped:" destination="RZr-GX-U1F" eventType="touchUpInside" id="7eW-db-qeA"/>
                                 </connections>
@@ -314,6 +330,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="startBtn" destination="tWB-LG-FCY" id="JVT-3d-0l0"/>
                         <segue destination="zbg-fL-x15" kind="show" identifier="mainSeg" id="0YH-H4-Cgz"/>
                     </connections>
                 </viewController>
@@ -392,6 +409,6 @@ Task organizer: integrated with calendar, organize tasks by priority</string>
         <image name="bckgrnd" width="1280" height="1280"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="i8e-VI-th7"/>
+        <segue reference="0YH-H4-Cgz"/>
     </inferredMetricsTieBreakers>
 </document>

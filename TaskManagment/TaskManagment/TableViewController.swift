@@ -5,6 +5,8 @@
 //  Created by Jessie Dowding on 11/29/17.
 //  Copyright © 2017 Cristian Meya Jessie. All rights reserved.
 //
+//  This is the table view page where all the todo list items will be displayed. 
+//
 
 import UIKit
 import CoreData
@@ -16,6 +18,7 @@ class TableViewController: UITableViewController{
     var refresher: UIRefreshControl!
     let detailsSegueIdentifier = "ShowDetailsSegue"
     
+<<<<<<< HEAD
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -30,6 +33,22 @@ class TableViewController: UITableViewController{
             destinationViewController?.descripName = person.value(forKeyPath: "details") as! String
         }
     }
+=======
+    @IBAction func `switch`(_ sender: UISwitch) {
+        
+        if (sender.isOn == true){
+            self.tableView.isEditing = true // if editing then show delete circle nect to item
+                                            // and have ability to reorder items
+        }
+        else{
+            self.tableView.isEditing = false
+        }
+        
+    }
+    
+    
+    
+>>>>>>> 8af12f9681ad914f896ed460b9d5143c0d6b461f
     func save(name: String) {
         
         guard let appDelegate =
@@ -84,9 +103,8 @@ class TableViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "The List"
-        self.tableView.isEditing = true
-        //tableView.register(UITableViewCell.self,
-          //                 forCellReuseIdentifier: "Cell")
+        //self.tableView.isEditing = false // if editing then show delete circle nect to item
+
         refresher = UIRefreshControl()
         tableView.addSubview(refresher)
         refresher.attributedTitle = NSAttributedString(string: "Pull to refresh")
@@ -164,6 +182,7 @@ class TableViewController: UITableViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableViewCell
         
         cell.textLabel?.text = person.value(forKeyPath: "name") as? String
+        
         cell.DetailsBtn.tag = indexPath.row
         //cell.DetailsBtn.addTarget(self, action: #selector(TableViewController.detailAction), for: .touchUpInside)
         return cell
@@ -200,5 +219,7 @@ class TableViewController: UITableViewController{
         present(alert, animated: true)
         self.tableView.reloadData()
     }
+    
+
 }
 

@@ -5,6 +5,8 @@
 //  Created by Jessie Dowding on 12/13/17.
 //  Copyright © 2017 Cristian Meya Jessie. All rights reserved.
 //
+//  This page contains information about our project
+
 
 import UIKit
 
