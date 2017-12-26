@@ -24,7 +24,8 @@ Task organizer; integrated with calendar, organize tasks by priority
 
 
 
-<h6 align="center"> For More Info on this Project see the [Wiki Page](https://github.com/JessDF/cst495_FinalProject/wiki) </h6>
+<h6 align="center"> For More Info on this Project see the <a href="https://github.com/JessDF/cst495_FinalProject/wiki">Wiki Page</a> </h6>
+
 
 
 
