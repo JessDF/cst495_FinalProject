@@ -15,12 +15,12 @@ Task organizer; integrated with calendar, organize tasks by priority
 |  Delete Tasks    |  Jessie     |
 |  "Finish Tasks" (i.e. Cross off)    |  Meya  |
 |  Edit Tasks    |   Jessie    |
-|  Prioritize Tasks    |   Jessie    |
+|  Prioritize Tasks    |   Jessie (reorder)    |
 |  Notifications/ Reminder    |    Meya   |
 |  Creation of Calendar/ Link to Google?    |    Meya   |
-|  Categorize Tasks    |    Jessie   |
+|  Categorize Tasks    |    n/a   |
 |  Core Data   |  Jessie |
-|  About Page  |  Jessie |
+|  About Page  |  Jessie/Meya |
 
 
 
