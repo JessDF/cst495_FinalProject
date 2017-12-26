@@ -16,13 +16,18 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var descripLbl: UILabel!
     var descripName:String = ""
     
-    //var titleString : String!
+    @IBOutlet weak var startLbl: UILabel!
+    var startString:String = ""
+    @IBOutlet weak var endLbl: UILabel!
+    var endString:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.titleLbl.text = titleName
         self.descripLbl.text = descripName
+        self.startLbl.text = startString
+        self.endLbl.text = endString
 
         // Do any additional setup after loading the view.
     }

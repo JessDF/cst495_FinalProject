@@ -30,6 +30,8 @@ class TableViewController: UITableViewController{
             let person = people[(button.tag)]
             destinationViewController?.titleName = person.value(forKeyPath: "name") as! String
             destinationViewController?.descripName = person.value(forKeyPath: "details") as! String
+            destinationViewController?.startString = person.value(forKeyPath: "start") as! String
+            destinationViewController?.endString = person.value(forKeyPath: "end") as! String
         }
     }
 

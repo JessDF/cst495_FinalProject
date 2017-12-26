@@ -48,6 +48,11 @@ class AddViewController: UIViewController, UITextViewDelegate{
             person.setValue(textField.text, forKeyPath: "name")
             person.setValue(DesTitle.text, forKeyPath: "details")
             
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd-MM-yyyy"
+            person.setValue(dateFormatter.string(from: startDate.date), forKeyPath: "start")
+            person.setValue(dateFormatter.string(from: endDate.date), forKeyPath: "end")
+            
             do {
                 try managedContext.save()
                 people.append(person)
@@ -76,7 +81,7 @@ class AddViewController: UIViewController, UITextViewDelegate{
                 if (granted) && (error  == nil)
                 {
                     print("granted\(granted)")
-                    print("error\(error)")
+                    print("error\(String(describing: error))")
                     
                     let event:EKEvent = EKEvent(eventStore: eventStore)
                     event.title = eventTitle
@@ -94,7 +99,7 @@ class AddViewController: UIViewController, UITextViewDelegate{
                     print("Save Event")
                     
                 }else{
-                    print("Error:\(error)")
+                    print("Error:\(String(describing: error))")
                 }
                 /*Check out the new logo that I created on <a href="http:logomakr.com" title="Logo Makr">LogoMakr.com</a> //https://logomakr.com/2ttQtn
                  */
