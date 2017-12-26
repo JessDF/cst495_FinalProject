@@ -17,6 +17,20 @@ class TableViewController: UITableViewController{
     var people: [NSManagedObject] = []
     var refresher: UIRefreshControl!
     
+    @IBAction func `switch`(_ sender: UISwitch) {
+        
+        if (sender.isOn == true){
+            self.tableView.isEditing = true // if editing then show delete circle nect to item
+                                            // and have ability to reorder items
+        }
+        else{
+            self.tableView.isEditing = false
+        }
+        
+    }
+    
+    
+    
     func save(name: String) {
         
         guard let appDelegate =
@@ -71,9 +85,8 @@ class TableViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "The List"
-        self.tableView.isEditing = true
-        //tableView.register(UITableViewCell.self,
-          //                 forCellReuseIdentifier: "Cell")
+        //self.tableView.isEditing = false // if editing then show delete circle nect to item
+
         refresher = UIRefreshControl()
         tableView.addSubview(refresher)
         refresher.attributedTitle = NSAttributedString(string: "Pull to refresh")
