@@ -49,7 +49,7 @@ class AddViewController: UIViewController, UITextViewDelegate{
             person.setValue(DesTitle.text, forKeyPath: "details")
             
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd-MM-yyyy"
+            dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
             person.setValue(dateFormatter.string(from: startDate.date), forKeyPath: "start")
             person.setValue(dateFormatter.string(from: endDate.date), forKeyPath: "end")
             
