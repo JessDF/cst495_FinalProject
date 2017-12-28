@@ -13,7 +13,6 @@ Task organizer; integrated with calendar, organize tasks by priority
 |  Add to calendar via String Detection    |   Meya    |
 |  Add Tasks    |  Jessie  |
 |  Delete Tasks    |  Jessie     |
-|  "Finish Tasks" (i.e. Cross off)    |  Meya  |
 |  Edit Tasks    |   Jessie/Meya    |
 |  Prioritize Tasks    |   Jessie (reorder)    |
 |  Notifications/ Reminder    |    Meya   |
