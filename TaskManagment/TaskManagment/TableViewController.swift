@@ -144,6 +144,7 @@ class TableViewController: UITableViewController{
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
+        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
