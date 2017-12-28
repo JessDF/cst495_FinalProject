@@ -2,10 +2,10 @@
 
 Members: Meya Gorbea, Cristian Galvan, Jessie Dowding
 
-###### Short Description
+#### Short Description
 Task organizer; integrated with calendar, organize tasks by priority
 
-###### Feature List
+#### Feature List
 
 | Feature        | Who         | 
 | ------------- |:-------------:|
@@ -14,7 +14,7 @@ Task organizer; integrated with calendar, organize tasks by priority
 |  Add Tasks    |  Jessie  - have to refresh to add  |
 |  Delete Tasks    |  Jessie     |
 |  "Finish Tasks" (i.e. Cross off)    |  Meya  |
-|  Edit Tasks    |   Jessie    |
+|  Edit Tasks    |   Jessie/Meya    |
 |  Prioritize Tasks    |   Jessie (reorder)    |
 |  Notifications/ Reminder    |    Meya   |
 |  Creation of Calendar/ Link to Google?    |    Meya   |
@@ -24,7 +24,7 @@ Task organizer; integrated with calendar, organize tasks by priority
 
 
 
-<h6 align="center"> For More Info on this Project see the <a href="https://github.com/JessDF/cst495_FinalProject/wiki">Wiki Page</a> </h6>
+<h4 align="center"> For More Info on this Project see the <a href="https://github.com/JessDF/cst495_FinalProject/wiki">Wiki Page</a> </h4>
 
 
 
