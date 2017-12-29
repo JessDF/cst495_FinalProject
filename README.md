@@ -5,6 +5,8 @@ Members: Meya Gorbea, Cristian Galvan, Jessie Dowding
 #### Short Description
 Task organizer; integrated with calendar, organize tasks by priority
 
+<h4 align="center"> For More Info on this Project see the <a href="https://github.com/JessDF/cst495_FinalProject/wiki">Wiki Page</a> </h4>
+
 #### Feature List
 
 | Feature        | Who         | 
@@ -23,8 +25,6 @@ Task organizer; integrated with calendar, organize tasks by priority
 |  Details Page  |  Jessie/Meya |
 
 
-
-<h4 align="center"> For More Info on this Project see the <a href="https://github.com/JessDF/cst495_FinalProject/wiki">Wiki Page</a> </h4>
 
 
 
