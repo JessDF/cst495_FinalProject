@@ -16,10 +16,11 @@ Task organizer; integrated with calendar, organize tasks by priority
 |  Edit Tasks    |   Jessie/Meya    |
 |  Prioritize Tasks    |   Jessie (reorder)    |
 |  Notifications/ Reminder    |    Meya   |
-|  Creation of Calendar/ Link to Google?    |    Meya   |
+|  Creation of Calendar/ Link to iOS Calendar    |    Meya   |
 |  Categorize Tasks - by order    |   Jessie  |
 |  Core Data   |  Jessie |
 |  About Page  |  Jessie/Meya |
+|  Details Page  |  Jessie/Meya |
 
 
 
