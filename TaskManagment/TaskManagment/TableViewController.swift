@@ -219,6 +219,15 @@ class TableViewController: UITableViewController{
         self.tableView.reloadData()
     }
     
+    func colorForIndex(index: Int) -> UIColor {
+        let itemCount = people.count - 1
+        let color = (CGFloat(index)/CGFloat(itemCount)) * 0.6
+        return UIColor(red: 1.0, green: color, blue: 0.0, alpha: 1.0)
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = colorForIndex(index: indexPath.row)
+    }
 
 }
 
