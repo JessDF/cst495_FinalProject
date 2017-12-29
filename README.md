@@ -13,7 +13,7 @@ Task organizer; integrated with calendar, organize tasks by priority
 
 | Feature        | Who         | 
 | ------------- |:-------------:|
-|  Date/ Time String detection    |   Add to Calendar   |
+|  Date/ Time String detection    |   Meya   |
 |  Add to calendar via String Detection    |   Meya    |
 |  Add Tasks    |  Jessie  |
 |  Delete Tasks    |  Jessie     |
