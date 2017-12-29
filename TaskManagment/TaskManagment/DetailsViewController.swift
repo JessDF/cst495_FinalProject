@@ -8,18 +8,21 @@
 //  This details page will show all details of a certain to do item 
 
 import UIKit
+import QuartzCore
 
 class DetailsViewController: UIViewController {
 
     @IBOutlet weak var titleLbl: UILabel!
-    var titleName:String = ""
     @IBOutlet weak var descripLbl: UILabel!
-    var descripName:String = ""
-    
     @IBOutlet weak var startLbl: UILabel!
-    var startString:String = ""
     @IBOutlet weak var endLbl: UILabel!
+    
+    
+    var titleName:String = ""
+    var descripName:String = ""
+    var startString:String = ""
     var endString:String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +32,18 @@ class DetailsViewController: UIViewController {
         self.startLbl.text = startString
         self.endLbl.text = endString
 
+        self.titleLbl.layer.borderWidth = 0.5
+        self.descripLbl.layer.borderWidth = 0.5
+        self.startLbl.layer.borderWidth = 0.5
+        self.endLbl.layer.borderWidth = 0.5
+       
+        
+        self.titleLbl.layer.cornerRadius = 10
+        self.descripLbl.layer.cornerRadius = 5
+        self.startLbl.layer.cornerRadius = 5
+        self.endLbl.layer.cornerRadius = 5
+        
+        
         // Do any additional setup after loading the view.
     }
 

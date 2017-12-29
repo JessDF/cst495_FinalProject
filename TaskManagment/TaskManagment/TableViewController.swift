@@ -17,6 +17,7 @@ class TableViewController: UITableViewController{
     var people: [NSManagedObject] = []
     var refresher: UIRefreshControl!
     let detailsSegueIdentifier = "ShowDetailsSegue"
+    var flag = false
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -40,9 +41,13 @@ class TableViewController: UITableViewController{
         if (sender.isOn == true){
             self.tableView.isEditing = true // if editing then show delete circle nect to item
                                             // and have ability to reorder items
+            self.flag = true // flag for 'tap the edit name'
+
         }
         else{
             self.tableView.isEditing = false
+            self.flag = false // flag for 'tap the edit name'
+            
         }
         
     }
@@ -191,38 +196,51 @@ class TableViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         
-        let alert = UIAlertController(title: "Edit Name",
-                                      message: "edit the name",
-                                      preferredStyle: .alert)
-        
-        
-        let saveAction = UIAlertAction(title: "Save", style: .default) {
-            [unowned self] action in
+        if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.checkmark {
             
-            guard let textField = alert.textFields?.first,
-                let nameToSave = textField.text else {
-                    return
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
+            
+        }else{
+            
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
+            
+        }
+        
+        if self.flag == true {
+            let alert = UIAlertController(title: "Edit Name",
+                                          message: "edit the name",
+                                          preferredStyle: .alert)
+            
+            
+            let saveAction = UIAlertAction(title: "Save", style: .default) {
+                [unowned self] action in
+                
+                guard let textField = alert.textFields?.first,
+                    let nameToSave = textField.text else {
+                        return
+                }
+                
+                self.edit(name: nameToSave, index: (indexPath as NSIndexPath) as IndexPath)
+                self.tableView.reloadData()
             }
             
-            self.edit(name: nameToSave, index: (indexPath as NSIndexPath) as IndexPath)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default)
+            
+            alert.addTextField()
+            
+            alert.addAction(saveAction)
+            alert.addAction(cancelAction)
+            
+            present(alert, animated: true)
             self.tableView.reloadData()
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
-        
-        alert.addTextField()
-        
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-        
-        present(alert, animated: true)
-        self.tableView.reloadData()
     }
     
     func colorForIndex(index: Int) -> UIColor {
         let itemCount = people.count - 1
         let color = (CGFloat(index)/CGFloat(itemCount)) * 0.6
-        return UIColor(red: 1.0, green: color, blue: 0.0, alpha: 1.0)
+        return UIColor(red: 0.42, green: color, blue: 1.0, alpha: 1.0)
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
